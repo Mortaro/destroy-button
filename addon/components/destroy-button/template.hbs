@@ -1,0 +1,30 @@
+<button {{action (action (mut active) true)}} type="button" class="btn btn-outline-danger">
+  Excluir
+</button>
+
+{{#if active}}
+  <div class="modal-wormhole">
+    <div class="modal-backdrop"></div>
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h4 class="modal-title">Confirmar exclusão</h4>
+          <button type="button" class="close" aria-label="Close" {{action (action (mut active) false)}}>
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <p> Você tem certeza que deseja excluir <b>{{get model attr}}</b>? </p>
+        </div>
+        <div class="modal-footer">
+          <button {{action (action (mut active) false)}} type="button" class="btn btn-link">
+            Cancelar
+          </button>
+          <button {{action 'confirm'}} type="button" class="btn btn-danger">
+            Confirmar
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+{{/if}}

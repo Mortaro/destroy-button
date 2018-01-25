@@ -1,0 +1,47 @@
+.destroy-button .modal-wormhole {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 9;
+}
+
+.destroy-button .modal-dialog {
+  position: relative;
+  z-index: 2002;
+  right: 0;
+  margin: 0 auto;
+  padding: 10px;
+  animation: destroy-button-modal .300s normal forwards ease-in-out;
+}
+
+@media (min-width: 768px) {
+  .destroy-button .modal-dialog {
+    width: 600px;
+    margin: 0 auto;
+    padding: 30px;
+  }
+}
+
+.destroy-button .modal-backdrop {
+  z-index: 2001;
+  opacity: 0.8;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+
+.destroy-button .modal-backdrop.clickable {
+  cursor: pointer;
+}
+
+@keyframes destroy-button-modal {
+  from {
+    transform: translateY(-100px);
+  }
+  to {
+    transform: translateY(0);
+  }
+}
